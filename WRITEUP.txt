@@ -1,0 +1,157 @@
+Writeup File
+Homework 4 Link:http://cs-server.usc.edu:2345/CodeIgniter/index.php/site
+Homework 2 Link:http://cs-server.usc.edu:2345/hw2/login1.php
+phpmyadmin link:http://cs-server.usc.edu:2345/phpMyAdmin/index.php
+This website is the client side of a website using CodeIgniter MVC Framework.I have used 6 tables customer,order,orderdetail,product,productcategory,specialsales
+Responsive Web Design is implemented by jQuery Mobile with HTC One V phone with CodeIgniter User Agent Library.
+Usernames and passwords for hw4
+User 1.Username:manan Password:manan2
+Usernames and passwords for hw2 for manager reports
+Manager.Username:abhishanga	Password:ali17
+Admin Username:namrata Password:456
+Sales Manager Username:aardraa Password:781
+Files for uploading pictures are in the Pictures Folder.
+1.Customer
+customerid	int(11)-primary key
+username	varchar(255)-username of user	
+password	varchar(255)-password of user	
+firstname	varchar(255)-first name	
+lastname	varchar(255)-last name	
+age	int(11)-age		
+email	varchar(255)-e-mail	
+phone	int(11)-phone number
+2.Order
+orderid	int(11)	-order id		
+customerid	int(11)-customer id			
+totalcost	int(11)-total cost			
+billingaddress	varchar(255)-billing address
+shippingaddress	varchar(255)-shipping address
+date	date-date of order
+3.Order Detail
+orderid	int(11)		-order id	
+productid	int(11)-product id		
+productprice	int(11)-product price		
+productquantity	int(11)-product quantity	
+4.Product
+productid	int(11)	-primary key	
+productcategoryid	int(11)	-foreign key in product category table		
+productname	varchar(255)	-product name
+productimage	varchar(255)-product image	
+productprice int(11)	-product price
+5.Product Category
+productcategoryid	int(11)	-primary key in product category table	
+productcategoryname	varchar(255)	-product category name
+6.Special Sales
+specialsalesid	int(11)	-primary key		
+productid	int(11)	-foreign key in product table		
+startdate	date	- start date	
+enddate	date	-end date		
+discount	int(11)	-discount
+
+
+Files(HW4)
+Controllers:
+billing-Controller page which saves order summary of the products bought and also stored the users credit card information,billing and shipping address in save order.
+cart-Controller saves the shopping cart wherein a user adds,deletes and changes his order.
+main-Controller for changing username data,order and orderdetail summary when a user logs in.
+products-Controller contains all the products available.It also has the method for the search function.
+site-Controller Functions for login,login validation,signup,signup validations,loading of product category and special sales pages.
+
+Models:
+billing_model-Model for inserting data for saved order.
+cart_model-Model functions for updating,changing and removing cart.
+get_pc-Gets product category elements
+get_db-Gets all products.
+get_search-Functionality for search elements.
+model_customer-Checks the validation for user logging in and signs up a new user.
+products_model-Gets all products and gets search elements.
+
+Views:
+billing-It is the page which displays order summary of the products bought and also stored the users credit card information,billing and shipping address.
+billingm-Mobile View for the page which displays order summary of the products bought and also stored the users credit card information,billing and shipping address.
+cart-This page displays the shopping cart wherein a user adds,deletes and changes his order
+cartm-Mobile View for page that displays the shopping cart wherein a user adds,deletes and changes his order.
+fail1-Failure for displaying any search results.
+products-This page contains all the products available.
+productsm-Mobile View for page contains all the products available.
+search-Displays all search results
+searchm-Mobile view for displaying all search results.
+success1-Registration Success on signup
+success2-Mobile View for registration Success on signup
+thank1-Thank you page for placing the order.
+thank2-Mobile View for Thank you page for placing the order.
+view_change-Changing user data.
+view_changem-Mobile View for changing user data.
+view_login-Home page for site.AJAX is implemented by jQuery in this page.
+view_loginm-Mobile View for Home page for site
+view_member-Welcome page when a user logs in
+view_memberm-Mobile page for Welcome page when a user logs in
+view_order-This shows the past orders of a user when a user clicks view past orders.
+view_orderm-Mobile View for the past orders of a user when a user clicks view past orders.
+view_orderdetail-Page for viewing order details of order clicked.
+view_orderdetailm-Mobile View for Page for viewing order details of order clicked.
+view_productcategory-It show category wise the products stored in the database.We can add items from this page to the shopping cart.
+view_productcategorym-Mobile View where it show category wise the products stored in the database.We can add items from this page to the shopping cart.
+view_products-This page contains all the products available.
+view_productsm-Mobile View for page contains all the products available.
+view_restricted-Page which a user doesnt have access to it.
+view_signin-Determines whether the login is valid or invalid and displays either an error message or goes to a new page.
+view_signinm-Mobile View where it Determines whether the login is valid or invalid and displays either an error message or goes to a new page.
+view_signup-It is used for creating the registration for new users.It has 2 functions which checks whether the user is new or old.
+view_signupm-Mobile View where it is used for creating the registration for new users.It has 2 functions which checks whether the user is new or old.
+view_specialsales-Displays special sales items.
+view_specialsalesm-Mobile View where it displays special sales items.
+Logout has been set for 10 minutes in Config File in CodeIgniter.
+SQL Injection and Cross Side Scripting are prevented by using htmlspecialchars and Active Record.
+
+Files(HW2)
+manager5.php-Contains customer sales report options where in we can type in a particular product/productcategory/order date and get corresponding orders.
+Alse contains a set of options to see total product category product sales,product sales and frequently purchased products.
+display6.php-Displays the result of the search result.
+pcsales.php-Shows sales of a particular product category
+psales.php-Shows sales of a particular product
+totalsales.php-Total Sales of All product categories
+freqprods1.php-Shows frequently purchased products in desceding order.
+FILES(HW2)
+Files
+prelogin.html-Contains the upper part of the login file including the heading
+postlogin.html-Contains the latter part of the page.AJAX is implemented in the terms and conditions.
+login1.php-Validates the usernames and passwords from the users database and accordingly either redirects to a particular page after a sucessful login or gives an error message.
+manager.php-Session time starts here.Contains buttons for selection of reports for product,productcategory,specialsales and employee.
+manager1.php-Contains search criteria for employee details.
+manager2.php-Contains search criteria for special sale details.
+manager3.php-Contains search criteria for product details.
+manager4.php-Contains search criteria for product category details.
+display1.php-SQL for product search is implemented.
+display2.php-SQL for employee search is implemented.
+display3.php-SQL for special sales search is implemented.
+display4.php-SQL for product category search is implemented.
+employee.php-Session time starts here.Contains buttons for adding,changing and modifying product,productcategory and specialsales details.
+addchangeproduct.php-Addition of product with price and name or modifying the existing details of product.
+addchangeproductcat.php-Addition of product category name or modifying the existing details of product category.
+addchangess.php-Addition of special sales with product discount,start date,end date or modifying the existing details of special sales product.
+addproduct.php-SQL implementation for adding product.
+addproductcat.php-SQL implementation for adding product category.
+addss.php-SQL implementation for adding special sales.
+changedeleteproduct.php-Radio list if change for product with price and name  or checkbox for delete.
+changedeleteproductcat.php-Radio list if change for product category with name  or checkbox for delete.
+changedeletess.php-Radio list if change for product with start date,end date and discount  or checkbox for delete.
+changeproduct.php-SQL implementation for changing product details.
+changeproductcat.php-SQL implementation for changing product category details.
+changess.php-SQL implementation for changing special sales details.
+deleteproduct.php-SQL implementation for deleting product details.
+deleteproductcat.php-SQL implementation for deleting product category details.
+deletess.php-SQL implementation for deleting special sales details.
+admin.php-Session time starts here.Contains buttons for adding,changing and modifying user and user login plus product,productcategory and specialsales details.Also can search for reports.
+addchangeuser.php-Addition of product with price and name or modifying the existing details of user login.
+addchangeuser1.php-Addition of product category name or modifying the existing details of user details .
+adduser.php-SQL implementation for adding user.
+adduser1.php-SQL implementation for adding user details.
+changedeleteuser.php-Radio list if change for user with username,password and usertype  or checkbox for delete.
+changedeleteuser1.php-Radio list if change for user category with first name,last name,age and employeepay  or checkbox for delete.
+changeuser.php-SQL implementation for changing user login details with username,password and usertype.
+changeuser1.php-SQL implementation for changing user details with first name,last name,age and employeepay.
+deleteuser.php-SQL implementation for deleting user login details with username,password and usertype.
+deleteuser1.php-SQL implementation for deleting user details with first name,last name,age and employeepay.
+logout.php-Timeout after 5minutes.Redirected to the login page.
+
